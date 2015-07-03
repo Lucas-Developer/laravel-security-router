@@ -43,8 +43,6 @@ Exemple:
 
 ```php
     'security'     => [
-        'protected'  => true,
-        'middleware' => ['auth'],
         'defender'   =>   [
             'load'       =>  true,
             'middleware' =>  ['sua-middware'],
