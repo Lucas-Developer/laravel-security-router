@@ -100,7 +100,7 @@ Router::post('product', $security,function (){
 });
 
 $security=$security
-    ->setFixedSecurity(['as'=>'store','Uses'=>'Controller@update'])
+    ->setFixedSecurity(['as'=>'update','Uses'=>'Controller@update'])
     ->getConfig('storehouse-product', 'update');
 
 Router::put('product', $security);
