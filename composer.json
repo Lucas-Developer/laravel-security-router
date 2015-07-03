@@ -1,0 +1,22 @@
+{
+    "name": "resultsystems/laravel-security-router",
+    "description": "Laravel Security Router",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leandro Henrique Reis",
+            "email": "resultsystems@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/contracts": "~5.1",
+        "illuminate/support": "~5.1",
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "ResultSystems\\SecurityRouter\\": "src/Security-Router/"
+        }
+    },
+    "minimum-stability": "dev"
+}
