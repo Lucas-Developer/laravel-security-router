@@ -68,7 +68,7 @@ Create your config file config/PACOTE.php
     ],
 ```
 
-####Exemple:
+####Use:
 
 ```php
 $security=$this->app['security.router'];

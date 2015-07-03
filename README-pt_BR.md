@@ -67,7 +67,7 @@ Crie um arquivo de configurações em config/PACOTE.php
     ],
 ```
 
-####Exemplo:
+####Use:
 
 ```php
 $security=$this->app['security.router'];
