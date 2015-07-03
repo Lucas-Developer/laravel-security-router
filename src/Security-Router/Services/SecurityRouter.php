@@ -75,7 +75,7 @@ class SecurityRouter
 
 /**
  * recebe as opções a serem usadas na opção "can" do defender
- * @return array|string array|string
+ * @return array|string
  */
     protected function getDefenderCan()
     {
@@ -84,7 +84,7 @@ class SecurityRouter
 
 /**
  * recebe as opções a serem usadas na opção "is" do defender
- * @return array|string array|string
+ * @return array|string
  */
     protected function getDefenderIs()
     {
