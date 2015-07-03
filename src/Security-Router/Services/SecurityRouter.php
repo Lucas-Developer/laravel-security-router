@@ -18,7 +18,7 @@ class SecurityRouter
 
 /**
  * Construi a class Security Router, dependente do $this->app['Config']
- * @param $this->app['config'] $appConfig
+ * @param Illuminate\Contracts\Config\Repository $appConfig  objeto do tipo $this->app['config']
  */
     public function __construct($appConfig)
     {
