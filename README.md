@@ -104,6 +104,6 @@ $security=$security
     ->setFixedSecurity(['as'=>'update','Uses'=>'Controller@update'])
     ->getConfig('storehouse-product', 'update');
 
-Router::put('product', $security);
+Router::put('product', $security)->where('id', '[0-9]+');
 
 ```
