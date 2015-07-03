@@ -39,7 +39,7 @@ You need to update your application configuration in order to register the packa
 
 Create your config file config/PACOTE.php
 
-Exemple:
+####Exemple:
 
 ```php
     'security'     => [
