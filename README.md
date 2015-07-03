@@ -9,7 +9,7 @@
 Using <a href="https://getcomposer.org/" target="_blank">composer</a>, execute the following command to automatically update your `composer.json`:
 
 ```shell
-composer require resultsystems/needsroleorpermission
+composer require resultsystems/laravel-security-router
 ```
 
 or manually update your `composer.json` file

@@ -17,8 +17,8 @@ class SecurityRouter
     protected $primaryKey='security';
 
 /**
- * [__construct description]
- * @param [type] $appConfig [description]
+ * Construi a class Security Router, dependente do $this->app['Config']
+ * @param $this->app['config'] $appConfig
  */
     public function __construct($appConfig)
     {
@@ -26,10 +26,10 @@ class SecurityRouter
     }
 
 /**
- * [getKey description]
- * @param  [type] $key     [description]
- * @param  [type] $default [description]
- * @return [type]          [description]
+ * Recebe o valor da configuração pela key
+ * @param  string                 $key     chave
+ * @param  array|null|bool|string $default valor padrão caso não exista nas configurações
+ * @return array|null|bool|string Retorna o valor encontrado nas configurações
  */
     public function getKey($key, $default=null)
     {
@@ -37,8 +37,9 @@ class SecurityRouter
     }
 
 /**
- * [isProtected description]
- * @return boolean [description]
+ * Verifica se é necessário proteger antes de usar o defender
+ * ou mesmo sem necessidade de usá-lo
+ * @return bool true/false
  */
     protected function isProtected()
     {
@@ -46,8 +47,8 @@ class SecurityRouter
     }
 
 /**
- * [isDefenderLoad description]
- * @return boolean [description]
+ * Verifica se é para carregar o defender
+ * @return bool true/false
  */
     protected function isDefenderLoad()
     {
@@ -55,8 +56,8 @@ class SecurityRouter
     }
 
 /**
- * [getMiddleware description]
- * @return [type] [description]
+ * recebe o(s) nome(s) do(s) middleware que será usado
+ * @return array array
  */
     protected function getMiddleware()
     {
@@ -64,8 +65,8 @@ class SecurityRouter
     }
 
 /**
- * [getDefenderMiddleware description]
- * @return [type] [description]
+ * recebe o(s) nome(s) do(s) middleware que será usado no defender
+ * @return array array
  */
     protected function getDefenderMiddleware()
     {
@@ -73,8 +74,8 @@ class SecurityRouter
     }
 
 /**
- * [getDefenderCan description]
- * @return [type] [description]
+ * recebe as opções a serem usadas na opção "can" do defender
+ * @return array|string array|string
  */
     protected function getDefenderCan()
     {
@@ -82,8 +83,8 @@ class SecurityRouter
     }
 
 /**
- * [getDefenderIs description]
- * @return [type] [description]
+ * recebe as opções a serem usadas na opção "is" do defender
+ * @return array|string array|string
  */
     protected function getDefenderIs()
     {
@@ -91,8 +92,8 @@ class SecurityRouter
     }
 
 /**
- * [getDefenderAny description]
- * @return [type] [description]
+ * recebe o valor a ser usadas na opção "any" do defender
+ * @return bool bool
  */
     protected function getDefenderAny()
     {
@@ -100,8 +101,8 @@ class SecurityRouter
     }
 
 /**
- * [setKey description]
- * @param [type] $key [description]
+ * seta o valor de key
+ * @param string $key valor da chave
  */
     public function setKey($key)
     {
@@ -109,9 +110,9 @@ class SecurityRouter
     }
 
 /**
- * [setConfig description]
- * @param [type] $package [description]
- * @param [type] $key     [description]
+ * seta as configurações a serem usadas
+ * @param string $package nome do pacote que será usado.
+ * @param string $key     chave a ser usada para consulta do pacote
  */
     protected function setConfig($package, $key)
     {
@@ -154,8 +155,8 @@ class SecurityRouter
     }
 
 /**
- * [setFixedSecurity description]
- * @param array $value [description]
+ * seta um valor padrão a ser retornado junto com as configurações
+ * @param array $value array
  */
     public function setFixedSecurity($value=[])
     {
@@ -164,7 +165,7 @@ class SecurityRouter
     }
 
 /**
- * [setPackage description]
+ * seta o nome do pacote que está será feito as configuras
  * @param [type] $value [description]
  */
     public function setPackage($value)
@@ -174,10 +175,10 @@ class SecurityRouter
     }
 
 /**
- * [getConfig description]
- * @param  [type] $package [description]
- * @param  [type] $key     [description]
- * @return [type]          [description]
+ * pega as configurações
+ * @param  string $package nome do pacote a ser usado
+ * @param  string $key     chave a ser consultada
+ * @return array          array com as configurações
  */
     public function getConfig($package, $key)
     {
