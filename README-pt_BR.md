@@ -34,11 +34,11 @@ Para usar o Defender em sua aplicação Laravel, é necessário registrar o pack
     ],
 // file END ommited
 ```
-#Forma de uso:
+###Forma de uso:
 
 Crie um arquivo de configurações em config/PACOTE.php
 
-Exemplo:
+####Exemplo:
 
 ```php
     'security'     => [
@@ -67,7 +67,7 @@ Exemplo:
     ],
 ```
 
-Exemplo:
+####Exemplo:
 
 ```php
 $security=$this->app['security.router'];
