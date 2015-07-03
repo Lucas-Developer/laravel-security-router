@@ -48,7 +48,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['your-middware'],
                 'can'        =>  ['product.create','product.store'],
                 'any'        =>  true,
                 'is'         =>  null,
