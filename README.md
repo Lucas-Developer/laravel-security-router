@@ -43,20 +43,6 @@ Exemple:
 
 ```php
     'security'     => [
-        'defender'   =>   [
-            'load'       =>  true,
-            'middleware' =>  ['sua-middware'],
-            'can'        =>  [
-                        'storehouse.product.create',
-                        'storehouse.product.store',
-                        'storehouse.product.search',
-                        'storehouse.product.show',
-                        'storehouse.product.update',
-                        'storehouse.product.destroy',
-                    ],
-            'any'        =>  true,
-            'is'         =>  null,
-        ],
         'create'     =>   [
             'protected'  =>  false,
             'middleware' =>  [],
@@ -64,6 +50,17 @@ Exemple:
                 'load'       =>  true,
                 'middleware' =>  ['sua-middware'],
                 'can'        =>  ['storehouse.product.create','storehouse.product.store'],
+                'any'        =>  false,
+                'is'         =>  null,
+            ],
+         ],
+        'edit'     =>   [
+            'protected'  =>  false,
+            'middleware' =>  [],
+            'defender'   =>   [
+                'load'       =>  true,
+                'middleware' =>  ['sua-middware'],
+                'can'        =>  ['storehouse.product.edit'],
                 'any'        =>  false,
                 'is'         =>  null,
             ],
