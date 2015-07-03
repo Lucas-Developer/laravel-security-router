@@ -35,7 +35,7 @@ You need to update your application configuration in order to register the packa
 // file END ommited
 ```
 
-#Made use:
+###Made use:
 
 Create your config file config/PACOTE.php
 
@@ -68,7 +68,7 @@ Exemple:
     ],
 ```
 
-Exemple:
+####Exemple:
 
 ```php
 $security=$this->app['security.router'];
