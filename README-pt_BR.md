@@ -46,7 +46,7 @@ Crie um arquivo de configurações em config/PACOTE.php
         'middleware' => ['auth'],
         'defender'   =>   [
             'load'       =>  true,
-            'middleware' =>  ['sua-middware'],
+            'middleware' =>  ['sua-middleware'],
             'can'        =>  [
                         'product.create',
                         'product.store',
@@ -63,7 +63,7 @@ Crie um arquivo de configurações em config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['sua-middleware'],
                 'can'        =>  ['storehouse.product.create','storehouse.product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
@@ -74,7 +74,7 @@ Crie um arquivo de configurações em config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['sua-middleware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
@@ -85,7 +85,7 @@ Crie um arquivo de configurações em config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['sua-middleware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,

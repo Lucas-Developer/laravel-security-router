@@ -47,7 +47,7 @@ Create your config file config/PACOTE.php
         'middleware' => ['auth'],
         'defender'   =>   [
             'load'       =>  true,
-            'middleware' =>  ['your-middware'],
+            'middleware' =>  ['your-middleware'],
             'can'        =>  [
                         'product.create',
                         'product.store',
@@ -64,7 +64,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['your-middware'],
+                'middleware' =>  ['your-middleware'],
                 'can'        =>  ['product.create','product.store'],
                 'any'        =>  true,
                 'is'         =>  null,
@@ -75,7 +75,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['your-middware'],
+                'middleware' =>  ['your-middleware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
@@ -86,7 +86,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['your-middware'],
+                'middleware' =>  ['your-middleware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
