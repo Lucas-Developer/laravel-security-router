@@ -43,6 +43,22 @@ Create your config file config/PACOTE.php
 
 ```php
     'security'     => [
+        'protected'  => true,
+        'middleware' => ['auth'],
+        'defender'   =>   [
+            'load'       =>  true,
+            'middleware' =>  ['your-middware'],
+            'can'        =>  [
+                        'product.create',
+                        'product.store',
+                        'product.search',
+                        'product.show',
+                        'product.update',
+                        'product.destroy',
+                    ],
+            'any'        =>  true,
+            'is'         =>  null,
+        ],
         'create'     =>   [
             'protected'  =>  false,
             'middleware' =>  [],
@@ -105,5 +121,34 @@ $security=$security
     ->getConfig('storehouse-product', 'update');
 
 Router::put('product/{id}', $security)->where('id', '[0-9]+');
+
+
+####Use : group
+
+$group = [];
+$group['prefix'] = 'product'
+$group['namespace'] = 'namespace';
+$group['as'] = 'product.';
+
+$security=$security
+    ->setFixedSecurity($group)
+    ->getConfig('storehouse-product', 'update');
+
+Router::group($group, function () use ($security) {
+    return 'Group protected';
+});
+
+Router::group($group, function () use ($security) {
+    $security=$security
+        ->setFixedSecurity(['as'=>'store'])
+        ->getConfig('storehouse-product', 'store');
+
+    Router::post('store', $security,function (){
+        return "I'm protected";
+    });
+
+});
+
+
 
 ```

@@ -31,7 +31,7 @@ class SecurityRouter
  * @param  array|null|bool|string $default valor padrão caso não exista nas configurações
  * @return array|null|bool|string Retorna o valor encontrado nas configurações
  */
-    public function getKey($key, $default=null)
+    public function getKey($key='', $default=null)
     {
         return $this->appConfig->get($this->package.'.'.$this->primaryKey.'.'.$key, $default);
     }
@@ -104,9 +104,12 @@ class SecurityRouter
  * seta o valor de key
  * @param string $key valor da chave
  */
-    public function setKey($key)
+    protected function setKey($key)
     {
-        $this->key=$key.'.';
+        $this->key=$key;
+        if ($this->key!='') {
+            $this->key.='.';
+        }
     }
 
 /**
@@ -151,6 +154,7 @@ class SecurityRouter
             }
             $security['any']=$this->getDefenderAny();
         }
+        $this->fixedSecurity=[];
         return $security;
     }
 
@@ -183,5 +187,16 @@ class SecurityRouter
     public function getConfig($package, $key)
     {
         return $this->setConfig($package, $key);
+    }
+
+/**
+ * pega as configurações do grupo
+ * @param  string $package nome do pacote a ser usado
+ * @param  string $key     chave a ser consultada
+ * @return array          array com as configurações
+ */
+    public function getConfigPackage($package)
+    {
+        return $this->setConfig($package, '');
     }
 }
