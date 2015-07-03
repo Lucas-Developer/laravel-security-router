@@ -125,7 +125,7 @@ Router::put('product/{id}', $security)->where('id', '[0-9]+');
 ####Uso : grupo
 
 
-```
+```php
 $group = [];
 $group['prefix'] = 'product'
 $group['namespace'] = 'namespace';
