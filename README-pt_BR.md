@@ -122,7 +122,7 @@ $security=$security
 Router::put('product/{id}', $security)->where('id', '[0-9]+');
 ```
 
-####Use : group
+####Uso : grupo
 
 
 ```
