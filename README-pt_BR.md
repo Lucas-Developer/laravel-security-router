@@ -53,13 +53,13 @@ Exemplo:
                 'is'         =>  null,
             ],
          ],
-        'edit'     =>   [
+        'store'     =>   [
             'protected'  =>  false,
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
                 'middleware' =>  ['sua-middware'],
-                'can'        =>  ['storehouse.product.edit'],
+                'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
             ],
@@ -67,13 +67,24 @@ Exemplo:
     ],
 ```
 
-Deverá funcionar assim:
+Exemplo:
 
 ```php
-$security=SecurityRouter::getConfig('pacote','key');
-Router::get('/path',$security, function() {
-    return 'Eu estou seguro';
+$security=$this->app['security.router'];
+
+$security=$security
+    ->setFixedSecurity(['as'=>'index'])
+    ->getConfig('storehouse-product', 'create');
+
+Router::get('/product/create', $security,function (){
+    retunr 'Eu estou protegido';
+});
+
+$security=$security
+    ->setFixedSecurity(['as'=>'update'])
+    ->getConfig('storehouse-product', 'store');
+
+Router::post('product', $security,function (){
+    retunr 'Eu estou protegido';
 });
 ```
-
-Ainda em desenvolvimento. Este é o projeto e a forma que deve funcionar.
