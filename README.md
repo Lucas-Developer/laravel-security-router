@@ -59,7 +59,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['your-middware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
@@ -70,7 +70,7 @@ Create your config file config/PACOTE.php
             'middleware' =>  [],
             'defender'   =>   [
                 'load'       =>  true,
-                'middleware' =>  ['sua-middware'],
+                'middleware' =>  ['your-middware'],
                 'can'        =>  ['product.store'],
                 'any'        =>  false,
                 'is'         =>  null,
@@ -89,7 +89,7 @@ $security=$security
     ->getConfig('storehouse-product', 'create');
 
 Router::get('/product/create', $security,function (){
-    return 'Eu estou protegido';
+    return "I'm protected";
 });
 
 $security=$security
@@ -97,7 +97,7 @@ $security=$security
     ->getConfig('storehouse-product', 'store');
 
 Router::post('product', $security,function (){
-    return 'Eu estou protegido';
+    return "I'm protected";
 });
 
 $security=$security
