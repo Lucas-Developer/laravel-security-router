@@ -123,7 +123,7 @@ $security=$security
 Router::put('product/{id}', $security)->where('id', '[0-9]+');
 ```
 
-####Use : group
+####Use : package
 
 
 ```php
@@ -132,22 +132,19 @@ $group['prefix'] = 'product'
 $group['namespace'] = 'namespace';
 $group['as'] = 'product.';
 
-$security=$security
+$group=$security
     ->setFixedSecurity($group)
-    ->getConfig('storehouse-product', 'update');
+    ->getConfigPackage('storehouse-product');
 
 Router::group($group, function () use ($security) {
     return 'Group protected';
 });
 
 Router::group($group, function () use ($security) {
-    $security=$security
-        ->setFixedSecurity(['as'=>'store'])
-        ->getConfig('storehouse-product', 'store');
-
-    Router::post('store', $security,function (){
+    Router::post('store', $security
+            ->setFixedSecurity(['as'=>'store'])
+            ->getConfig('storehouse-product', 'store'),function (){
         return "I'm protected";
     });
-
 });
 ```
