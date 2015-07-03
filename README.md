@@ -17,7 +17,7 @@ or manually update your `composer.json` file
 ```json
 {
     "require": {
-        "resultsystems/laravel-security-router": "dev-master"
+        "resultsystems/laravel-security-router": "1.*"
     }
 }
 ```
