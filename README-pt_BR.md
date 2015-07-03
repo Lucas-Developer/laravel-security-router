@@ -64,6 +64,17 @@ Crie um arquivo de configurações em config/PACOTE.php
                 'is'         =>  null,
             ],
          ],
+        'update'     =>   [
+            'protected'  =>  false,
+            'middleware' =>  [],
+            'defender'   =>   [
+                'load'       =>  true,
+                'middleware' =>  ['sua-middware'],
+                'can'        =>  ['product.store'],
+                'any'        =>  false,
+                'is'         =>  null,
+            ],
+         ],
     ],
 ```
 
@@ -77,14 +88,21 @@ $security=$security
     ->getConfig('storehouse-product', 'create');
 
 Router::get('/product/create', $security,function (){
-    retunr 'Eu estou protegido';
+    return 'Eu estou protegido';
 });
 
 $security=$security
-    ->setFixedSecurity(['as'=>'update'])
+    ->setFixedSecurity(['as'=>'store'])
     ->getConfig('storehouse-product', 'store');
 
 Router::post('product', $security,function (){
-    retunr 'Eu estou protegido';
+    return 'Eu estou protegido';
 });
+
+$security=$security
+    ->setFixedSecurity(['as'=>'store','Uses'=>'Controller@update'])
+    ->getConfig('storehouse-product', 'update');
+
+Router::put('product', $security);
+
 ```
