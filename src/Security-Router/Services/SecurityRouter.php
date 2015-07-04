@@ -117,12 +117,15 @@ class SecurityRouter
  * @param string $package nome do pacote que será usado.
  * @param string $key     chave a ser usada para consulta do pacote
  */
-    protected function setConfig($package, $key)
+    protected function setConfig($package, $key, $controller='')
     {
         $this->setPackage($package);
         $this->setKey($key);
-
         $security=$this->fixedSecurity;
+        if ($controller!='') {
+            $security['as']=$key;
+            $security['uses']=$controller.'@'.$key;
+        }
 
         //verify is protected
         if ($this->isProtected()) {
@@ -152,7 +155,9 @@ class SecurityRouter
             if ($is!=null && !empty($is)) {
                 $security['is']=$is;
             }
-            $security['any']=$this->getDefenderAny();
+            if ($can || $is) {
+                $security['any']=$this->getDefenderAny();
+            }
         }
         $this->fixedSecurity=[];
         return $security;
@@ -182,11 +187,12 @@ class SecurityRouter
  * pega as configurações
  * @param  string $package nome do pacote a ser usado
  * @param  string $key     chave a ser consultada
+ * @param  string $controller     chave a ser consultada
  * @return array          array com as configurações
  */
-    public function getConfig($package, $key)
+    public function getConfig($package, $key, $controller='')
     {
-        return $this->setConfig($package, $key);
+        return $this->setConfig($package, $key, $controller);
     }
 
 /**
