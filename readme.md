@@ -1,6 +1,6 @@
 #Security Router - Service
 
-[Readme em Português](https://github.com/resultsystems/laravel-security-router/blob/master/README-pt_BR.md).
+[Readme em Português](https://github.com/resultsystems/laravel-security-router/blob/master/readme-pt_BR.md).
 
 ## Installation
 
