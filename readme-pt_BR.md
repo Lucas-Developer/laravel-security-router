@@ -4,6 +4,8 @@
 
 ## Instalação
 
+[Vídeo tutorial](https://www.youtube.com/watch?v=mIkeYIXBrt8).
+
 ### 1. Dependência
 
 Using <a href="https://getcomposer.org/" target="_blank">composer</a>, execute the following command to automatically update your `composer.json`:
@@ -24,7 +26,7 @@ ou manualmente pelo no seu arquivo `composer.json`
 
 ### 2. Provider
 
-Para usar o Defender em sua aplicação Laravel, é necessário registrar o package no seu arquivo `config/app.php`. Adicione o seguinte código no fim da seção `providers`
+Para usar o SecurityRouter em sua aplicação Laravel, é necessário registrar o package no seu arquivo `config/app.php`. Adicione o seguinte código no fim da seção `providers`
 
 ```php
 // file START ommited

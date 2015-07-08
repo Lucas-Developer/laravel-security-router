@@ -4,6 +4,8 @@
 
 ## Installation
 
+[Video tutorial on portugues](https://www.youtube.com/watch?v=mIkeYIXBrt8).
+
 ### 1. Dependency
 
 Using <a href="https://getcomposer.org/" target="_blank">composer</a>, execute the following command to automatically update your `composer.json`:
