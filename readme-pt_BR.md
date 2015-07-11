@@ -14,7 +14,7 @@ Usando o <a href="https://getcomposer.org/" target="_blank">composer</a>, execut
 composer require resultsystems/laravel-security-router
 ```
 
-ou manualmente pelo no seu arquivo `composer.json`
+ou manualmente no seu arquivo `composer.json`
 
 ```json
 {
