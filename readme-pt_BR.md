@@ -8,7 +8,7 @@
 
 ### 1. Dependência
 
-Using <a href="https://getcomposer.org/" target="_blank">composer</a>, execute the following command to automatically update your `composer.json`:
+Usando o <a href="https://getcomposer.org/" target="_blank">composer</a>, execute o comando a seguir para instalar instalar automaticamente `composer.json`:
 
 ```shell
 composer require resultsystems/laravel-security-router
